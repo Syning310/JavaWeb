@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <base href="http://localhost:8080/fruit_1.5/" />
+    <link rel="stylesheet" href="css/edit.css">
+</head>
+
+<body>
+<div id="container">
+    <div id="div_fruit_list">
+        <p class="center f32">编辑库存信息</p>
+        <form th:action="@{/update.do}" method="post">
+            <table id="tal_fruit" th:object="${fruit}">
+                <input type="hidden" name="upname" th:value="*{name}" /> <!-- 隐藏域，功能类似于文本框，他的值会随着表单的发送一起发送给服务器，但是界面上看不到  -->
+                <tr>
+                    <th clss="w20">名称:</th>
+    <!--                <td><input type="text" name="name" th:value="${fruit.name}"/></td>   换一种写法-->
+                    <td><input type="text" name="name" th:value="*{name}"/></td>
+                </tr>
+                <tr>
+                    <th clss="w20">单价:</th>
+    <!--                <td><input type="text" name="price" th:value="${fruit.price}"/></td>  注意这种写法在table标签中已经给过对象了  -->
+                    <td><input type="text" name="price" th:value="*{price}"/></td>
+                </tr>
+                <tr>
+                    <th clss="w20">数量:</th>
+                    <td><input type="text" name="count" th:value="${fruit.count}"/></td>
+                </tr>
+                <tr>
+                    <th class="w20">备注:</th>
+                    <td><input type="text" name="remark" th:value="${fruit.remark}"/></td>
+                </tr>
+                <tr>
+                    <th colspan="2">
+                        <input type="submit" value="修改" />
+                    </th>
+            </table>
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>

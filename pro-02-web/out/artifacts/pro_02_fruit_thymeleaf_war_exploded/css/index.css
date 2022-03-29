@@ -1,0 +1,37 @@
+#div_container {
+    width: 80%;
+    height: 100%;
+    border: 0px solid red;
+    margin-left: 10%;
+    background-color: azure;
+    border-radius: 25px
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background: #808080;
+}
+
+div {
+    position: relative;
+    float: left;
+}
+
+
+#tbl_fruit, #tbl_fruit tr, #tbl_fruit th, #tbl_fruit td{
+    border-collapse:collapse;
+    border: 1px solid gray;
+    text-align: center;
+    height: 28px;
+    font-size: 26px;
+    font-family: "黑体";
+    font-weight: lighter;
+    color: red;
+    margin-left: 450px;
+}
+
+.delImg {
+    width: 24px;
+    height: 24px;
+}

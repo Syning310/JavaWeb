@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/fruit_1.1/fruit_1.1.iml" filepath="$PROJECT_DIR$/fruit_1.1/fruit_1.1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fruit_1.2/fruit_1.2.iml" filepath="$PROJECT_DIR$/fruit_1.2/fruit_1.2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fruit_1.3/fruit_1.3.iml" filepath="$PROJECT_DIR$/fruit_1.3/fruit_1.3.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fruit_1.4/fruit_1.4.iml" filepath="$PROJECT_DIR$/fruit_1.4/fruit_1.4.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fruit_1.5/fruit_1.5.iml" filepath="$PROJECT_DIR$/fruit_1.5/fruit_1.5.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fruit_1.6/fruit_1.6.iml" filepath="$PROJECT_DIR$/fruit_1.6/fruit_1.6.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fruit_1.7_mvc/fruit_1.7_mvc.iml" filepath="$PROJECT_DIR$/fruit_1.7_mvc/fruit_1.7_mvc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fruit_1.8_reflect/fruit_1.8_reflect.iml" filepath="$PROJECT_DIR$/fruit_1.8_reflect/fruit_1.8_reflect.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fruit_1.9_dispatcherServlet/fruit_1.9_dispatcherServlet.iml" filepath="$PROJECT_DIR$/fruit_1.9_dispatcherServlet/fruit_1.9_dispatcherServlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/fruit_2.0_controller/fruit_2.0_controller.iml" filepath="$PROJECT_DIR$/fruit_2.0_controller/fruit_2.0_controller.iml" />
+      <module fileurl="file://$PROJECT_DIR$/pro-03-web.iml" filepath="$PROJECT_DIR$/pro-03-web.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="pro-02-fruit-thymeleaf:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/pro_02_fruit_thymeleaf_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="pro-00-fruit1.1/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="pro-00-fruit1.1" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="commons-dbutils-1.7" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.37-bin" />
+          <element id="library" level="project" name="druid-1.1.10" />
+          <element id="library" level="project" name="libs_Thymeleaf" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

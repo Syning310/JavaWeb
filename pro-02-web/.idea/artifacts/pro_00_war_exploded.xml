@@ -1,0 +1,20 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="pro-00:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/pro_00_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="pro-00/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="pro-00" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="commons-dbutils-1.7" />
+          <element id="library" level="project" name="mysql-connector-java-5.1.37-bin" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Java/驱动包、工具类、配置文件/MySQL驱动包/mysql-connector-java-5.1.37-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Java/驱动包、工具类、配置文件/Druid/druid-1.1.10.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../../../Java/驱动包、工具类、配置文件/Apache工具包/commons-dbutils-1.7.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
