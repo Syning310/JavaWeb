@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+
+<bean>
+    
+
+            
+    <!--  这个bean标签的作用是，将来ServletPath的值是 fruit 时，映射于 com.controller.FruitController 类    -->
+    <bean id="fruit" class="com.controller.FruitController" />
+</bean>
+
+
+
+
+

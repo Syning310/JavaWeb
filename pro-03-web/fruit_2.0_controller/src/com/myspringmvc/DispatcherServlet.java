@@ -33,7 +33,7 @@ public class DispatcherServlet extends ViewBaseServlet {
         try {
             // 获得类加载器，读取 .xml 文件
             InputStream input =
-                    getClass().getClassLoader().getResourceAsStream("applicationContext.xml");
+                    DispatcherServlet.class.getClassLoader().getResourceAsStream("applicationContext.xml");
             
 
             // 1、创建DocumentBuilderFactory 实例

@@ -1,13 +1,12 @@
 package com.dao;
 
+
 import com.domain.Fruit;
 import com.utils.JdbcUtilityByDruid;
-import org.apache.commons.dbutils.handlers.BeanListHandler;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.List;
 
 
 public class FruitDAO extends BasicDAO<Fruit> {
