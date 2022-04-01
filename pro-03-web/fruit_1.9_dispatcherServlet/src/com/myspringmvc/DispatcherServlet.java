@@ -91,11 +91,12 @@ public class DispatcherServlet extends HttpServlet {
         
         
         String servletPath = req.getServletPath();
+        System.out.println(servletPath);    //  /fruit.do
         servletPath = servletPath.substring(1);
         int lastDotInder = servletPath.lastIndexOf(".do");
         servletPath = servletPath.substring(0, lastDotInder);
 
-        //System.out.println("servletPath = " + servletPath);
+        System.out.println("servletPath = " + servletPath);
         
         Object controllerBeanObj = beanMap.get(servletPath);
 

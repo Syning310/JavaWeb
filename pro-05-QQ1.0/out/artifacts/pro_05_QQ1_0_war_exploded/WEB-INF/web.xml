@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+    
+    <context-param>
+        <param-name>view-prefix</param-name>
+        <param-value>/</param-value>
+    </context-param>
+    <context-param>
+        <param-name>view-suffix</param-name>
+        <param-value>.html</param-value>
+    </context-param>
+    
+    <listener>
+        <listener-class>listener.ContextLoalerListener</listener-class>
+    </listener>
+    
+    
+    <filter>
+        <filter-name>charact_set</filter-name>
+        <filter-class>filter.CharactEncodingFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>charact_set</filter-name>
+        <url-pattern>*.do</url-pattern>
+    </filter-mapping>
+    
+    <filter>
+        <filter-name>open_session</filter-name>
+        <filter-class>filter.OpenSessionInViewFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>open_session</filter-name>
+        <url-pattern>*.do</url-pattern>
+    </filter-mapping>
+    
+    
+    
+    
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>applicationContext.xml</param-value>
+    </context-param>
+    
+    
+    
+    <servlet>
+        <servlet-name>dispatcher</servlet-name>
+        <servlet-class>myspring.DispatcherServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>dispatcher</servlet-name>
+        <url-pattern>*.do</url-pattern>
+    </servlet-mapping>
+    
+    
+    
+    
+    
+</web-app>
