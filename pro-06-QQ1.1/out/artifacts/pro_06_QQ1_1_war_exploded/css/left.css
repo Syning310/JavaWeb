@@ -1,0 +1,14 @@
+body{
+    background-color: #99CC99;
+}
+
+#div_friendList{
+    height:486px;
+    margin-left:48px;
+    margin-top:24px;
+    margin-bottom:64px;
+}
+
+#div_friendList li{
+    margin-bottom: 8px;
+}

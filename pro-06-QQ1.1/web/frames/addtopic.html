@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <base href="http://192.168.3.7:8080/QQ1.1/"/>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    <link rel="stylesheet" th:href="@{/css/addtopic.css}">
+    <title>Title</title>
+</head>
+<body>
+<div id="div_add_topic">
+    <p class="add_reply_title">添加话题</p>
+    <form action="topic.do" method="post">
+        <input type="hidden" name="operate" value="addTopic"/>
+        <table id="table_add_topic">
+            <tr>
+                <th style="width: 50px">话题标题：</th>
+                <td><input type="text" name="title" /></td>
+            </tr>
+            <tr>
+                <th style="width: 50px">话题内容：</th>
+                <td><textarea name="content" rows="3" style="height:80px;width:400px;"></textarea></td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <input type="submit" value=" 发 布 "/>
+                    <input type="reset" value=" 重 置 "/>
+                </th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

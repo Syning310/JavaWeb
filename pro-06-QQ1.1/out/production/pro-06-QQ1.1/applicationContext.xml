@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE beans [
+        <!ELEMENT beans (bean*)>
+        <!ELEMENT bean (property*)>
+        <!ELEMENT property (#PCDATA)>
+        
+        
+        <!ATTLIST bean id ID #REQUIRED>
+        <!ATTLIST bean class CDATA #IMPLIED>
+        
+        <!ATTLIST property name CDATA #IMPLIED>
+        <!ATTLIST property ref IDREF #IMPLIED>
+]>
+
+<beans>
+    
+    <!--  DAO层    id 和 全类名           -->
+    
+    <bean id="userBasicDAO" class="dao.UserBasicDAO"/>
+    <bean id="topicDAO" class="dao.TopicDAO"/>
+    <bean id="replyDAO" class="dao.ReplyDAO"/>
+    <bean id="hostReplyDAO" class="dao.HostReplyDAO"/>
+    
+    
+    
+    <!--  Service层 id 和 全类名    property name是service的字段名   ref 映射于 DAO层的 id   根据 id 属性找到 全类名      -->
+    
+    <bean id="userService" class="service.UserBasicService">
+        <property name="userBasicDAO" ref="userBasicDAO"/>     <!--    找到ref映射的标签的id，指向它创建的对象实例    -->
+    </bean>
+
+    <bean id="topicService" class="service.TopicService">
+        <property name="topicDAO" ref="topicDAO"/>
+    </bean>
+    
+     <bean id="replyService" class="service.ReplyService">
+         <property name="replyDAO" ref="replyDAO"/>
+     </bean>
+    
+    <bean id="hostReplyService" class="service.HostReplyService">
+        <property name="hostReplyDAO" ref="hostReplyDAO"/>
+    </bean>
+    
+    
+    
+    <!--  BO层  id 和 全类名               -->
+    
+    <bean id="userBasicBO" class="bo.UserBasicBO">
+        <property name="userBasicService" ref="userService"/>
+    </bean>
+    
+    <bean id="topicBO" class="bo.TopicBO">
+       <property name="topicService" ref="topicService"/>  <!--   找到ref映射的标签的id，指向它创建的对象实例   -->
+        <property name="replyBO" ref="replyBO"/>
+        <property name="hostReplyBO" ref="hostReplyBO"/>
+    </bean>
+    
+    <bean id="replyBO" class="bo.ReplyBO">
+        <property name="replyService" ref="replyService"/>
+        <property name="hostReplyBO" ref="hostReplyBO"/>
+    </bean>
+    
+    <bean id="hostReplyBO" class="bo.HostReplyBO">
+        <property name="hostReplyService" ref="hostReplyService"/>
+    </bean>
+    
+    
+    
+    
+    <!--  controller层  id 和 全类名             -->
+    
+    <bean id="user" class="controller.UserController">  
+        <property name="userBO" ref="userBasicBO"/>      <!--    找到ref映射的标签的id，指向它创建的对象实例     -->
+        <property name="topicBO" ref="topicBO"/>         <!--    找到ref映射的标签的id，指向它创建的对象实例    -->
+    </bean>
+
+    <bean id="page" class="myspring.PageController"/>
+    
+    <bean id="topic" class="controller.topicController">
+        <property name="topicBO" ref="topicBO"/>
+        <property name="replyBO" ref="replyBO"/>
+        <property name="userBasicBO" ref="userBasicBO"/>
+        <property name="hostReplyBO" ref="hostReplyBO"/>
+    </bean>
+    
+    <bean id="reply" class="controller.replyController">
+        <property name="replyBO" ref="replyBO"/>
+    </bean>
+    
+</beans>
+
+
+

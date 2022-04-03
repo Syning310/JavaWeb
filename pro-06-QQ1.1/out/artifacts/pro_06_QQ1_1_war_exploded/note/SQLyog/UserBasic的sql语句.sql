@@ -9,7 +9,6 @@ INSERT INTO user_basic VALUES
 	(NULL, '1366851462', '许先生', MD5('123456'), 'D:\图片\慢慢来\自拍.jpg'),
 	(NULL, '1954465135', '雷先生', MD5('123456'), 'D:\图片\慢慢来\自拍.jpg');
 
-SELECT * FROM user_basic;
 
 # 根据好友登录表的主键，添加好友列表数据
 INSERT INTO friend (uid, fid) VALUES(1, 2), (1, 3), (1, 4), (1, 5);
@@ -36,16 +35,12 @@ SELECT * FROM user_basic WHERE loginId = '1031887546' AND pwd = MD5('syning0310'
 
 
 
-# 2、headImg的字符串
-
-UPDATE user_basic SET headImg = 'dog.jpg';
+# 
 
 
 
-UPDATE user_basic SET headImg = 'honger.jpg' WHERE nickName = '洪先生';
-UPDATE user_basic SET headImg = 'cai.jpg' WHERE nickName = '蔡先生';
-UPDATE user_basic SET headImg = 'lei.jpg' WHERE nickName = '雷先生';
-UPDATE user_basic SET headImg = 'xu.jpg' WHERE nickName = '许先生';
+
+
 
 
 
