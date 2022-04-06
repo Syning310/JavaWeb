@@ -1,0 +1,19 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="pro-07-BookStore:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/pro_07_BookStore_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="pro-07-BookStore/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="pro-07-BookStore" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="commons-dbutils-1.7" />
+          <element id="library" level="application" name="druid-1.1.10" />
+          <element id="library" level="application" name="mysql-connector-java-5.1.37-bin" />
+          <element id="library" level="project" name="thymeleaf_lib" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
