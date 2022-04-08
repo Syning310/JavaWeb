@@ -6,7 +6,11 @@ import service.ShoppingItemService;
 import service.UserService;
 
 
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 public class UserController {
     
@@ -36,7 +40,57 @@ public class UserController {
     
     
     
+    // 注册用户
+    public String regist(String name, String pwd, String pwdAgain, String email, String verification, HttpSession session, HttpServletResponse response) {
+        
+        // 获取验证码
+        Object verifyCode = session.getAttribute("KAPTCHA_SESSION_KEY");
+        
+        // 先对比验证码是否正确，在进行下一步操作
+        if (verifyCode == null || !verifyCode.equals(verification)) { 
+            // 验证码错误
+            try {
+                response.setCharacterEncoding("utf-8");
+                response.setContentType("text/html;charset=utf-8");
+                PrintWriter out = response.getWriter();
+                out.println("<script language='javascript'>alert('验证码不正确!');window.location.href='page.do?operate=page&page=user/regist';</script>");
+                // 因为上面已经跳转了，所以在这里不需要return 
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            if (verifyCode.equals(verification)) {
+                User user = new User();
+                // 设置名字，密码，邮箱，角色
+                user.setName(name);
+                user.setPwd(pwd);
+                user.setEmail(email);
+                user.setRole(0);
+                userService.addUser(user);
+                
+            }
+        }
+        
+        return "user/login";
+    }
     
+    
+    
+    // 检查用户是否存在
+    public String ckName(String name) {
+        
+        User user = userService.getUserByName(name);
+        
+        if (user != null) {
+            // 用户名已经被占用，不允许注册
+            return "json:{'name':'1'}";
+        } else {
+            // 用户名不存在，允许注册
+            return "json:{'name':'0'}";
+        }
+        
+        
+    }
     
     
     

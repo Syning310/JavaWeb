@@ -12,6 +12,7 @@
           <element id="library" level="application" name="druid-1.1.10" />
           <element id="library" level="application" name="mysql-connector-java-5.1.37-bin" />
           <element id="library" level="project" name="thymeleaf_lib" />
+          <element id="library" level="project" name="kaptcha-2.3.2" />
         </element>
       </element>
     </root>

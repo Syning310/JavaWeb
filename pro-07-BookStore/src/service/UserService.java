@@ -15,7 +15,17 @@ public class UserService {
     }
     
     
+    // 2、注册用户
+    public Integer addUser(User user) {
+        String sql = "insert into `user` values (null, ?, md5(?), ?, ?)";
+        return userDAO.update(sql, user.getName(), user.getPwd(), user.getEmail(), user.getRole());
+    }
     
+    // 3、检查用户是否存在
+    public User getUserByName(String name) {
+        String sql = "select id, name, pwd, email, role from `user` where name=?";
+        return userDAO.querySingle(sql, User.class, name);
+    }
     
     
 }

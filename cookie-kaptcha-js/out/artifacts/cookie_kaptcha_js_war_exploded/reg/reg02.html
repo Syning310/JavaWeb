@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="javascript">
+        // 正则表达式三部曲：① 定义正则表达式对象；② 定义待校验的字符串；③ 校验
+        
+        //var reg = new RegExp("abcd");
+        var reg = /o/g;  // g表示匹配的模式，表示全文匹配
+        
+        var str = "autO tOO";
+        
+        var flag = reg.test(str);
+        
+        console.log(flag);
+        
+    </script>
+</head>
+<body>
+
+</body>
+</html>

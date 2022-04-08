@@ -47,15 +47,52 @@
     - 如果没有 currUser ，表示当前不是一个登录合法的用户，应该跳转到登录页面让其登录
     
     - 但是添加过滤器之后，会说重定向次数过多，或url打不开
-    - 
+    - 所以需要给该类配置参数
+    
+    
+7、 注册表单验证
+    - <form>有一个事件，onsubmit
+    - onsubmit="return faluse"; 那么表单点击提交按钮也不会提交
+    - onsubmit="return true";   那么表单点击提交时就会提交
 
 
+8、前后端交互  Ajax
+    第一步: 客户端发送异步请求，并绑定对结果处理的回调函数
+        - <input type="text" name="name" onblur="ckName()"/>
+        - 定义chName方法：
+            1、创建 XMLHttpRequest对象
+            2、XMLHttpRequest对象操作步骤：
+                ① open("GET", url, true);    第三个参数 true : 表示是否是异步发送
+                ② onreadyStateChange 设置回调
+                ③ send() 发送请求
+            3、在回调函数中判断，XMLHttpRequest对象的状态： readyState(0-4)，status(200)
+            
+    第二步: 服务器端做校验，然后将校验结果响应给客户端
 
-
-
-
-
-
-
+    Ajax:异步的JavaScript and XML
+        目的：用来发送异步请求，然后当服务器给我响应的时候再进行回调操作
+        好处：提高用户体验；局部刷新：降低服务器负担，减轻浏览器压力，减轻网络带宽压力
+    步骤:
+        1、创建 XMLHttpRequest 对象
+        2、调用 open 进行设置: xmlHttpRequest.open("GET", url, true);
+        3、绑定状态改变时执行的回调函数 - onreadystatechange
+        4、发送请求 - send();
+        5、编写回调函数，在回调函数中，我们只对 XMLHttpRequest 的 readystate 为 4 时感兴趣
+                                    只对 XMLHttpRequst 的 status 为 200 时感兴趣
+    readystate
+    0 -> (未初始化)，还没有调用send()方法
+    1 -> (载入)，已调用send()方法，正在发送请求
+    2 -> (载入完成)，send()方法执行完成，已经接收到全部响应内容
+    3 -> (交互)，正在解析响应内容
+    4 -> (完成)，响应内容解析完成，可以在客户端调用了
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 

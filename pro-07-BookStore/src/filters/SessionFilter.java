@@ -14,11 +14,15 @@ import java.util.Arrays;
 import java.util.List;
 
 // 只允许请求 index 页面和 login 页面
-@WebFilter(urlPatterns = {"*.do", "*.html"},
-            initParams = {
-                @WebInitParam(name = "bai",
-                        value = "/book_store/page.do?operate=page&page=user/login,/book_store/user.do?null")
-            })
+
+
+//@WebFilter(urlPatterns = {"*.do", "*.html"},
+//            initParams = {
+//                @WebInitParam(name = "bai",
+//                        value = "/book_store/page.do?operate=page&page=user/login,/book_store/user.do?null")
+//            })
+
+
 public class SessionFilter implements Filter {
 
     List<String> baiList;
