@@ -104,6 +104,10 @@ public class DispatcherServlet extends ViewBaseServlet {
                     method.setAccessible(true);
                     Object returnObj = method.invoke(controllerBeanObj, parameterValues);  // 传入需要调用的对象实例，和参数数组
                     
+                    if (returnObj == null) 
+                        return;
+                    
+                    
                     // 3、视图处理  
                     String methodReturnStr = (String)returnObj;  // 将 controller 对象方法的返回值进行类型转换
                            

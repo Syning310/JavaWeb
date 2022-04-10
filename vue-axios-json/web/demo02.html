@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript" src="script/vue.js"></script>
+    <script language="JavaScript">
+
+        // function hello() {
+        //     person.sayHello();
+        // } 
+        //
+        // var person = new Object();
+        // person.pid="p001";
+        // person.pname="jim";
+        // person.sayHello=function() {
+        //     alert("hello world");
+        // }
+        
+        window.onload=function() {
+            
+            var vue = new Vue({
+                "el":"#div0",
+                data:{
+                    msg:"hello world!!!"
+                    
+                }
+            });
+            
+        }
+        
+        
+        
+    </script>
+</head>
+<body>
+    <div id="div0">
+        <span>{{msg}}</span><br/>
+<!--        <input type="button" value="打招呼" onclick="hello()"/>-->
+        <!--    v-model是双向绑定，也就是说之前的v-bind是通过msg这个变量的值，来控制input输入框
+                 现在v-model不仅msg来控制input输入框，反过来input输入框的内容也会改变msg的值
+         -->
+        <input type="text" v-model:value="msg"/>
+    </div> 
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript" src="script/vue.js"></script>
+    <script language="JavaScript">
+
+        // function hello() {
+        //     person.sayHello();
+        // } 
+        //
+        // var person = new Object();
+        // person.pid="p001";
+        // person.pname="jim";
+        // person.sayHello=function() {
+        //     alert("hello world");
+        // }
+        
+        window.onload=function() {
+            
+            var vue = new Vue({
+                "el":"#div0",
+                data:{
+                    num:3
+                    
+                }
+            });
+            
+        }
+        
+        
+        
+    </script>
+</head>
+<body>
+    <div id="div0">
+        <input type="text" v-model="num"/>
+        <!--  if 和 else 之间不能有其他节点   -->
+        <div v-if="num%2==0" style="width:200px;height:200px;background-color:chartreuse;">&nbsp;</div>
+        <div v-else="num%2==0" style="width:200px;height:200px;background-color:coral;">&nbsp;</div>
+    </div> 
+</body>
+</html>

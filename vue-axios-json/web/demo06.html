@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02.演示Axios发送JSON格式的参数值给服务器端</title>
+    <script language="JavaScript" src="script/vue.js"></script>
+    <script language="JavaScript" src="script/axios.min.js"></script>
+    <script language="JavaScript">
+        window.onload=function(){
+            var vue = new Vue({
+                "el":"#div0",
+                data:{
+                    uname:"宁",
+                    pwd:"ok"
+                },
+                methods:{
+                    axios02:function(){
+                        axios({
+                            method:"post",
+                            url:"axios02.do",
+                            data:{
+                                uname:vue.uname,
+                                pwd:vue.pwd
+                            }
+                        })
+                            .then(function (value) {
+                                console.log(value);    // 成功响应执行的回调  value.data 可以获取到服务器的响应内容
+                                
+                                var data = value.data;
+                                // data对应的数据
+                                // {"小月月", "0216"}
+                                vue.uname=data.uname;
+                                vue.pwd=data.pwd;
+                                
+                                // 此处的value的data返回的是js object，因此可以直接点出属性
+                                // 如果服务器给我们响应的是一个字符串 ： "{"小月月", "0216"}"
+                                // js语言中，也有字符串和js对象之间相互转化的API
+                                
+                                JSON.stringify(object);   // object -> string
+                                JSON.parse(string);       // string -> object
+                                
+                            })
+                            .catch(function (reason) {
+                                console.log(reason);   // 有异常时执行的回调  reason.response.data 可以获取到响应的内容
+                                                       // reason.message / reason.stack 可以查看错误的信息
+                            });
+                    }
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+<div id="div0">
+    uname:<input type="text" v-model="uname"/><br/>
+    pwd:<input type="text" v-model="pwd"/><br/>
+    <input type="button" @click="axios02" value="发送一个JSON格式的参数值的异步请求"/>
+</div>
+</body>
+</html>

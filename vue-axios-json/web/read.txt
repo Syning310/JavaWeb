@@ -1,0 +1,58 @@
+
+
+
+
+
+
+
+
+1、Vue
+    ① {{}} 相当于 innerText
+    ② v-bind:attr 绑定属性值，如：v-bind:value - 绑定value值  简写 :value
+    ③ v-model 双向绑定，v-model:value，简写 v-model
+    ④ v-if, v-else, v-show
+        v-if 和 v-else 之间不能有其他的节点；v-show 是通过样式表的 display 来控制节点是否显示
+    ⑤ v-for 迭代
+        v-for={fruit in fruitList}
+    ⑥ v-on 绑定事件
+    其他:
+        - trim():取出首尾空格  split():  join()
+        - watch 表示监听属性
+        - 生命周期
+        
+2、Axios
+    Axios 是 Ajax 的一个框架，简化 Ajax 操作
+    操作步骤：
+        ① 添加并引入axios的js文件
+        ② 客户端向服务器端异步发送普通参数值
+    基本格式：axios().then().catch()
+    示例：
+        axios({
+            
+        })
+            .then(function(value) {  })
+                .catch(function(reson) { })
+
+
+
+3、客户端向服务器发送JSON格式的数据
+    JSON 是一种数据格式
+    XML 也是一种数据格式
+    
+    JSON 格式如下：
+    [{sid:"s001",age:18},{sid:"s002",age:19}]
+    
+    - 相对于 XML 格式 JSON 格式表达数据更简洁，更能节省网络带宽
+    - 客户端发送JSON格式的数据给服务器端
+
+    Ⅰ 客户端中的 params 需要修改成 data
+    Ⅱ 服务器获取请求参数值，不再是 request.Parameter("name"); 的形式
+        变成了：
+            1、接收发送过来的数据: request.getReader(), StringBuilder...
+                {"name":"宁","pwd":"ok"}
+            2、将上面的数据转化成 User Object (需要使用第三方jar: GSON)
+            
+
+
+
+

@@ -66,7 +66,7 @@
     </bean>
     
     <bean id="cart" class="controller.CartController">
-        
+        <property name="shoppingItemService" ref="shoppingItemService"/>
     </bean>
     
     <bean id="order" class="controller.OrderController">

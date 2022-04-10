@@ -25,5 +25,6 @@
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.60" level="application_server_libraries" />
     <orderEntry type="library" name="thymeleaf_lib" level="project" />
     <orderEntry type="library" name="kaptcha-2.3.2" level="project" />
+    <orderEntry type="library" name="gson-2.2.4" level="project" />
   </component>
 </module>

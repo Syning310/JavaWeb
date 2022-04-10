@@ -103,7 +103,7 @@ function ckNameCB() {
         if (responstText=="{'name':'1'}") {
             alert("用户名已经被注册!");
         } else {
-            alert("允许注册!");
+            //alert("允许注册!");
         }
         
     }

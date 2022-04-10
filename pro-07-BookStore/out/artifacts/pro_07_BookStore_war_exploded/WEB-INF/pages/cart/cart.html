@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
-    <bese href="http://192.168.3.7:8080/book_store/" />
+    <bese th:ref="@{http://192.168.3.7:8080/book_store/}" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" th:href="@{/static/css/minireset.css}" />
     <link rel="stylesheet" th:href="@{/static/css/common.css}" />
     <link rel="stylesheet" th:href="@{/static/css/cart.css}" />
+    <script language="JavaScript" th:src="@{/static/script/vue.js}"></script>
+    <script language="JavaScript" th:src="@{/static/script/axios.min.js}"></script>
     <script language="JavaScript" th:src="@{/static/script/cart.js}"></script>
   </head>
   <body>
@@ -29,7 +31,7 @@
         </div>
       </div>
     </div>
-    <div class="list">
+    <div class="list" id="cart_div">
       <div class="w">
         <table>
           <thead>
@@ -78,19 +80,19 @@
           <ul>
             <li>
               <a href="">
-                <img src="../../static/img/bottom1.png" alt="" />
+                <img th:src="@{/static/img/bottom1.png}" alt="" />
                 <span>大咖级讲师亲自授课</span>
               </a>
             </li>
             <li>
               <a href="">
-                <img src="../../static/img/bottom.png" alt="" />
+                <img th:src="@{/static/img/bottom.png}" alt="" />
                 <span>课程为学员成长持续赋能</span>
               </a>
             </li>
             <li>
               <a href="">
-                <img src="../../static/img/bottom2.png" alt="" />
+                <img th:src="@{/static/img/bottom2.png}" alt="" />
                 <span>学员真是情况大公开</span>
               </a>
             </li>

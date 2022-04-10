@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript" src="script/vue.js"></script>
+    <script language="JavaScript">
+
+        // function hello() {
+        //     person.sayHello();
+        // } 
+        //
+        // var person = new Object();
+        // person.pid="p001";
+        // person.pname="jim";
+        // person.sayHello=function() {
+        //     alert("hello world");
+        // }
+        
+        window.onload=function() {
+            
+            var vue = new Vue({
+                "el":"#div0",
+                data:{
+                    msg:"hello world!!!",
+                    uname:"尚亦宁"
+                }
+            });
+            
+        }
+        
+        
+        
+    </script>
+</head>
+<body>
+    <div id="div0">
+        <span>{{msg}}</span>
+<!--        <input type="button" value="打招呼" onclick="hello()"/>-->
+        <!--  v-bind:value 表示绑定value属性， v-bind可以省略，直接写成   :value     -->
+        <input type="text" :value="uname"/>
+    </div> 
+</body>
+</html>

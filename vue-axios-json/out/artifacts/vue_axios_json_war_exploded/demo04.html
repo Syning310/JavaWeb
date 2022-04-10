@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-model="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script language="JavaScript" src="script/vue.js"></script>
+    <script language="JavaScript">
+        
+        window.onload=function() {
+            
+            var vue = new Vue({
+                "el":"#div0",
+                data:{
+                    num1:1,
+                    num2:2,
+                    num3:0
+                },
+                
+                watch:{
+                    num1:function(n) {
+                        this.num3 = n + this.num2;
+                    },
+                    num2:function(n) {
+                        this.num3 = this.num1 + n;
+                    }
+                }
+                
+            });
+            
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="div0">
+        <input type="text" v-model:value="num1" size="2"/>
+        +
+        <input type="text" v-model:value="num2" size="2"/>
+        =
+        <span>{{num3}}</span>
+    </div> 
+</body>
+</html>
